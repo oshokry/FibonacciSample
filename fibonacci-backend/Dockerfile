@@ -8,5 +8,5 @@ RUN pip3 install Flask
 RUN pip3 install sockets
 
 COPY api.py /scripts/api.py
-ENTRYPOINT ["python3 -u", "/scripts/api.py"]
+ENTRYPOINT ["python3", "-u", "/scripts/api.py"]
 # CMD ["-v", "v3.0", "-l", "true"]
