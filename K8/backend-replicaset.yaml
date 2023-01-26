@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: fibonacci-backend-rs
+  labels:
+    app: fibonacci
+    tier: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fibonacci
+      tier: backend
+  template:
+    metadata:
+      name: fibonacci-backend-pod
+      labels:
+        app: fibonacci
+        tier: backend
+    spec:
+      containers:
+        - name: fibonacci-backend
+          image: oshokry/fibonacci-backend
