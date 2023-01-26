@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fibonacci-backend-pod
+  labels:
+    app: fibonacci
+    tier: backend
+spec:
+  containers:
+    - name: fibonacci-backend
+      image: oshokry/fibonacci-backend
