@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fibonacci-backend-deployment
+  labels:
+    app: fibonacci
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fibonacci
+      tier: backend
+  template:
+    metadata:
+      name: fibonacci-backend-pod
+      labels:
+        app: fibonacci
+        tier: backend
+    spec:
+      containers:
+        - name: fibonacci-backend
+          image: oshokry/fibonacci-backend
+          args: ["-v", "v3.0", "-l", "true"]
+          volumeMounts:
+          - name: backend-persistent-storage
+            mountPath: /logs
+      volumes:
+      - name: backend-persistent-storage
+        persistentVolumeClaim:
+          claimName: fibonacci-backend-pvc
