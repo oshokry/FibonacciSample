@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: log-config-map
+  labels:
+    app: fibonacci
+data:
+  config : |
+    [log]
+    path = x0x0x0x0
+    filename = x0x0x0x0
