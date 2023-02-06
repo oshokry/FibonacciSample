@@ -6,7 +6,7 @@ metadata:
     app: fibonacci
     tier: backend
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: fibonacci
