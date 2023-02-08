@@ -5,6 +5,8 @@ metadata:
   labels:
     app: fibonacci
     tier: frontend
+  annotations:
+    kubernetes.io/change-cause: Fibonacci-frontend-v1
 spec:
   replicas: 1
   selector:
